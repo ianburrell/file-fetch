@@ -175,8 +175,8 @@ for my $entry (@map) {
 
 ### Heuristics
 {
-  require IO::Socket::INET;
-  my $sock = IO::Socket::INET->new( PeerAddr => 'ftp.funet.fi', PeerPort => 21, Timeout => 20 )
+  require IO::Socket::IP;
+  my $sock = IO::Socket::IP->new( PeerAddr => 'ftp.funet.fi', PeerPort => 21, Timeout => 20 )
      or $heuristics{ftp} = 0;
 }
 
@@ -194,8 +194,8 @@ for my $entry (@map) {
 
 ### Heuristics
 {
-  require IO::Socket::INET;
-  my $sock = IO::Socket::INET->new( PeerAddr => 'www.cpan.org', PeerPort => 80, Timeout => 20 )
+  require IO::Socket::IP;
+  my $sock = IO::Socket::IP->new( PeerAddr => 'www.cpan.org', PeerPort => 80, Timeout => 20 )
      or $heuristics{http} = 0;
 }
 
@@ -212,8 +212,8 @@ for my $entry (@map) {
 
 ### Heuristics
 {
-  require IO::Socket::INET;
-  my $sock = IO::Socket::INET->new( PeerAddr => 'cpan.pair.com', PeerPort => 873, Timeout => 20 )
+  require IO::Socket::IP;
+  my $sock = IO::Socket::IP->new( PeerAddr => 'cpan.pair.com', PeerPort => 873, Timeout => 20 )
      or $heuristics{rsync} = 0;
 }
 
@@ -227,8 +227,8 @@ for my $entry (@map) {
 
 ### Heuristics
 {
-  require IO::Socket::INET;
-  my $sock = IO::Socket::INET->new( PeerAddr => 'github.com', PeerPort => 9418, Timeout => 20 )
+  require IO::Socket::IP;
+  my $sock = IO::Socket::IP->new( PeerAddr => 'github.com', PeerPort => 9418, Timeout => 20 )
      or $heuristics{git} = 0;
 }
 

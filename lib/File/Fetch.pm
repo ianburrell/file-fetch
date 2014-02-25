@@ -717,7 +717,7 @@ sub _httplite_fetch {
 
 }
 
-### Simple IO::Socket::INET fetching ###
+### Simple IO::Socket::IP fetching ###
 sub _iosock_fetch {
     my $self = shift;
     my %hash = @_;
@@ -729,7 +729,7 @@ sub _iosock_fetch {
     check( $tmpl, \%hash ) or return;
 
     my $use_list = {
-        'IO::Socket::INET' => '0.0',
+        'IO::Socket::IP'   => '0.0',
         'IO::Select'       => '0.0',
     };
 
@@ -738,7 +738,7 @@ sub _iosock_fetch {
         return;
     }
 
-    my $sock = IO::Socket::INET->new(
+    my $sock = IO::Socket::IP->new(
         PeerHost => $self->host,
         ( $self->host =~ /:/ ? () : ( PeerPort => 80 ) ),
     );
